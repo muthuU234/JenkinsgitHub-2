@@ -41,7 +41,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
 
     depends_on:
-      - courier-mysql1
+      - courier-mysql
 
     networks:
       - courier-network
@@ -57,7 +57,7 @@ services:
       - "3001:80"
 
     depends_on:
-      - courier-backend1
+      - courier-backend
 
     networks:
       - courier-network
