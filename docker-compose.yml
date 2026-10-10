@@ -54,7 +54,7 @@ services:
     container_name: courier-frontend1
 
     ports:
-      - "3001:80"
+      - "3001:81"
 
     depends_on:
       - courier-backend
