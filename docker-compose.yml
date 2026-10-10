@@ -2,7 +2,7 @@ services:
 
   courier-mysql:
     image: mysql:8.0
-    container_name: courier-mysql
+    container_name: courier-mysql1
 
     environment:
       MYSQL_DATABASE: EXPORT
@@ -29,7 +29,7 @@ services:
       context: ./backend
       dockerfile: dockerfile
 
-    container_name: courier-backend
+    container_name: courier-backend1
 
     ports:
       - "8080:8080"
@@ -41,7 +41,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
 
     depends_on:
-      - courier-mysql
+      - courier-mysql1
 
     networks:
       - courier-network
@@ -51,13 +51,13 @@ services:
       context: ./frontend
       dockerfile: dockerfile
 
-    container_name: courier-frontend
+    container_name: courier-frontend1
 
     ports:
       - "3001:80"
 
     depends_on:
-      - courier-backend
+      - courier-backend1
 
     networks:
       - courier-network
